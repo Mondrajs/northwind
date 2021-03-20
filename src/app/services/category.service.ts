@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { category } from '../models/category';
-import { listResponseModel } from '../models/ListResponseModel';
-import { Product } from '../models/product';
-import { Todo } from '../models/todo';
+import { Category } from '../models/category';
+import { ListResponseModel } from '../models/listResponseModel';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class CategoryService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getCategories():Observable<listResponseModel<category>>{
-    return this.httpClient.get<listResponseModel<category>>(this.apiUrl);
+  getCategories():Observable<ListResponseModel<Category>>{
+    return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl);
   }
 }
